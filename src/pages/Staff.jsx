@@ -6,7 +6,7 @@ const Managers = "𝖎𝕿𝖟𝕱𝖗𝖆𝖓𝖈𝖊𝖘𝖈𝖔 | iTzFrancesc
 
 // Per gli altri ruoli: "NomeVisualizzato | NomeMCReale, NomeVisualizzato | NomeMCReale "
 const SrAdmins = "re_murder11";
-const Admins = "ciao";
+const Admins = "ciaoasodaosd";
 const SrDevelopers = "";
 const Developers = "";
 const JrDevelopers = "𝖕𝖔𝖗𝖈𝖔𝖘𝖕𝖎𝖓𝖔𝖊𝖝𝖊 | porcospinoexe";
