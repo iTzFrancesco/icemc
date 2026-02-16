@@ -1,0 +1,76 @@
+{
+  "Owner": [
+    {
+      "displayName": "𝕮𝖗𝖎𝖕𝖙𝖆𝖙𝖔𝖍",
+      "mcName": "criptato_",
+      "description": "Owner & Dev"
+    },
+    {
+      "displayName": "ʟᴜɴᴀʀ",
+      "mcName": "Dream3245",
+      "description": "Owner & Dev"
+    },
+    {
+      "displayName": "FrostByte",
+      "mcName": "NotFrostByte17",
+      "description": "Owner & SS Manager"
+    }
+  ],
+  "Manager": [
+    {
+      "displayName": "𝖎𝕿𝖟𝕱𝖗𝖆𝖓𝖈𝖊𝖘𝖈𝖔",
+      "mcName": "iTzFrancesco7",
+      "description": "Manager & FrontEnd Dev"
+    }
+  ],
+  "Sr. Admin": [],
+  "Admin": [],
+  "Sr. Developer": [],
+  "Developer": [],
+  "Jr. Developer": [
+    {
+      "displayName": "𝖕𝖔𝖗𝖈𝖔𝖘𝖕𝖎𝖓𝖔𝖊𝖝𝖊",
+      "mcName": "porcospinoexe",
+      "description": ""
+    }
+  ],
+  "Builder": [
+    {
+      "displayName": "re_murder",
+      "mcName": "re_murder11",
+      "description": "per le sue build si ispira molto a donutsmp"
+    }
+  ],
+  "Sr. Mod": [],
+  "Mod": [],
+  "Jr. Mod": [
+    {
+      "displayName": "antiidolo",
+      "mcName": "xqpr",
+      "description": ""
+    }
+  ],
+  "Helper": [],
+  "Jr. Helper": [
+    {
+      "displayName": "OᐯEᖇᗪEᗩTᕼ__",
+      "mcName": "overdeath__",
+      "description": ""
+    },
+    {
+      "displayName": "Exploitareh",
+      "mcName": "exploitareh",
+      "description": ""
+    },
+    {
+      "displayName": "Phantom",
+      "mcName": "Phantom",
+      "description": ""
+    },
+    {
+      "displayName": "Papero_104",
+      "mcName": "Papero_104",
+      "description": ""
+    }
+  ]
+}
