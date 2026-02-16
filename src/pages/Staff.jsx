@@ -5,7 +5,7 @@ const Owners = "𝕮𝖗𝖎𝖕𝖙𝖆𝖙𝖔𝖍 | criptato_ | Owner & Dev, 
 const Managers = "𝖎𝕿𝖟𝕱𝖗𝖆𝖓𝖈𝖊𝖘𝖈𝖔 | iTzFrancesco7 | Manager & FrontEnd Dev";
 
 // Per gli altri ruoli: "NomeVisualizzato | NomeMCReale, NomeVisualizzato | NomeMCReale "
-const SrAdmins = "provadefinitiva | iTzFrancesco7";
+const SrAdmins = "";
 const Admins = "";
 const SrDevelopers = "";
 const Developers = "";
