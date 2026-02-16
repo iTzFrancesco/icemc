@@ -1,1 +1,4 @@
 node_modules
+staff_editor.pyw
+__pycache__
+staff_editor_config.txt

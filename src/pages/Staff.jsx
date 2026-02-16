@@ -1,66 +1,37 @@
 import React from 'react';
+import staffData from '../data/staff-list.json';
 
-// Per Owner e Manager: "NomeVisualizzato | NomeMCReale | Descrizione, NomeVisualizzato | NomeMCReale | Descrizione"
-const Owners = "𝕮𝖗𝖎𝖕𝖙𝖆𝖙𝖔𝖍 | criptato_ | Owner & Dev, ʟᴜɴᴀʀ | Dream3245 | Owner & Dev, FrostByte | NotFrostByte17 | Owner & SS Manager  ";
-const Managers = "𝖎𝕿𝖟𝕱𝖗𝖆𝖓𝖈𝖊𝖘𝖈𝖔 | iTzFrancesco7 | Manager & FrontEnd Dev";
+const CATEGORY_COLORS = {
+    'Owner': 'text-red-500',
+    'Manager': 'text-amber-500',
+    'Sr. Admin': 'text-red-500',
+    'Admin': 'text-red-500',
+    'Sr. Developer': 'text-cyan-500',
+    'Developer': 'text-cyan-500',
+    'Jr. Developer': 'text-cyan-500',
+    'Builder': 'text-yellow-500',
+    'Sr. Mod': 'text-cyan-500',
+    'Mod': 'text-cyan-500',
+    'Jr. Mod': 'text-cyan-500',
+    'Helper': 'text-green-500',
+    'Jr. Helper': 'text-green-500',
+};
 
-// Per gli altri ruoli: "NomeVisualizzato | NomeMCReale, NomeVisualizzato | NomeMCReale "
-const SrAdmins = "";
-const Admins = "";
-const SrDevelopers = "";
-const Developers = "";
-const JrDevelopers = "𝖕𝖔𝖗𝖈𝖔𝖘𝖕𝖎𝖓𝖔𝖊𝖝𝖊 | porcospinoexe";
-const Builders = "";
-const SrMods = "";
-const Mods = "";
-const JrMods = "antiidolo | xqpr";
-const Helpers = "";
-const JrHelpers = "OᐯEᖇᗪEᗩTᕼ__ | overdeath__, Exploitareh | exploitareh, Phantom, Papero_104 | Papero_104";
+const ORDER = [
+    'Owner', 'Manager', 'Sr. Admin', 'Admin',
+    'Sr. Developer', 'Developer', 'Jr. Developer',
+    'Builder', 'Sr. Mod', 'Mod', 'Jr. Mod',
+    'Helper', 'Jr. Helper'
+];
 
 const Staff = ({ serverName }) => {
-    const parseStaffWithDesc = (names, role, color) => {
-        if (!names) return [];
-        return names.split(',').map(entry => {
-            const parts = entry.split('|').map(s => s.trim());
-            return {
-                displayName: parts[0] || "",
-                mcName: parts[1] || parts[0] || "",
-                description: parts[2] || "",
-                role: role,
-                color: color
-            };
-        });
-    };
-
-    const parseStaff = (names, role, color) => {
-        if (!names) return [];
-        return names.split(',').map(entry => {
-            const parts = entry.split('|').map(s => s.trim());
-            return {
-                displayName: parts[0] || "",
-                mcName: parts[1] || parts[0] || "",
-                description: "",
-                role: role,
-                color: color
-            };
-        });
-    };
-
-    const staffCategories = [
-        { title: 'Owner', color: 'text-red-500', members: parseStaffWithDesc(Owners, 'Owner', 'text-red-500') },
-        { title: 'Manager', color: 'text-amber-500', members: parseStaffWithDesc(Managers, 'Manager', 'text-amber-500') },
-        { title: 'Sr. Admin', color: 'text-red-500', members: parseStaff(SrAdmins, 'Sr. Admin', 'text-red-500') },
-        { title: 'Admin', color: 'text-red-500', members: parseStaff(Admins, 'Admin', 'text-red-500') },
-        { title: 'Sr. Developer', color: 'text-cyan-500', members: parseStaff(SrDevelopers, 'Sr. Developer', 'text-cyan-500') },
-        { title: 'Developer', color: 'text-cyan-500', members: parseStaff(Developers, 'Developer', 'text-cyan-500') },
-        { title: 'Jr. Developer', color: 'text-cyan-500', members: parseStaff(JrDevelopers, 'Jr. Developer', 'text-cyan-500') },
-        { title: 'Builder', color: 'text-yellow-500', members: parseStaff(Builders, 'Builder', 'text-yellow-500') },
-        { title: 'Sr. Mod', color: 'text-cyan-500', members: parseStaff(SrMods, 'Sr. Mod', 'text-cyan-500') },
-        { title: 'Mod', color: 'text-cyan-500', members: parseStaff(Mods, 'Mod', 'text-cyan-500') },
-        { title: 'Jr. Mod', color: 'text-cyan-500', members: parseStaff(JrMods, 'Jr. Mod', 'text-cyan-500') },
-        { title: 'Helper', color: 'text-green-500', members: parseStaff(Helpers, 'Helper', 'text-green-500') },
-        { title: 'Jr. Helper', color: 'text-green-500', members: parseStaff(JrHelpers, 'Jr. Helper', 'text-green-500') },
-    ].filter(cat => cat.members.length > 0);
+    const staffCategories = ORDER
+        .filter(title => staffData[title]?.length > 0)
+        .map(title => ({
+            title,
+            color: CATEGORY_COLORS[title],
+            members: staffData[title]
+        }));
 
     return (
         <div className="text-center py-20 px-4">
