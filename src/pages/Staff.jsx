@@ -15,7 +15,7 @@ const SrMods = "";
 const Mods = "";
 const JrMods = "antiidolo | xqpr";
 const Helpers = "";
-const JrHelpers = "OᐯEᖇᗪEᗩTᕼ__ | overdeath__, Exploitareh | exploitareh";
+const JrHelpers = "OᐯEᖇᗪEᗩTᕼ__ | overdeath__, Exploitareh | exploitareh, Phantom, Papero_104 | Papero_104";
 
 const Staff = ({ serverName }) => {
     const parseStaffWithDesc = (names, role, color) => {
