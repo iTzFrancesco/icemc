@@ -1,55 +1,46 @@
 import React, { useState, useEffect } from 'react';
 import { AuthContext } from './AuthContext.js';
 import { userApi, purchaseApi } from '../lib/api.js';
-import { apiClient } from '../lib/api-client.js';
 
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [loading, setLoading] = useState(true);
-    const [dbConnected, setDbConnected] = useState(false);
 
     useEffect(() => {
         const initAuth = async () => {
-            // Test API connection on load
-            try {
-                await apiClient.healthCheck();
-                setDbConnected(true);
-                console.log('✅ API connection successful');
-            } catch (error) {
-                console.warn('⚠️ API connection failed:', error.message);
-                setDbConnected(false);
-            }
-
-            // Check if there's a saved user in localStorage
+            // Controlla se c'è un utente salvato in localStorage
             const savedUser = localStorage.getItem('icemc_user');
             if (savedUser) {
-                const userData = JSON.parse(savedUser);
-                setUser(userData);
-                setIsAuthenticated(true);
+                try {
+                    const userData = JSON.parse(savedUser);
+                    setUser(userData);
+                    setIsAuthenticated(true);
+                } catch (e) {
+                    localStorage.removeItem('icemc_user');
+                }
             }
             setLoading(false);
         };
-        
+
         initAuth();
     }, []);
 
     const login = async (mcUsername) => {
         try {
-            // Get or create user in database
             const dbUser = await userApi.getOrCreateUser(mcUsername);
-            
+
             const userData = {
                 mcUsername: dbUser.mc_username,
                 id: dbUser.id,
                 createdAt: dbUser.created_at,
                 loginDate: new Date().toISOString()
             };
-            
+
             setUser(userData);
             setIsAuthenticated(true);
             localStorage.setItem('icemc_user', JSON.stringify(userData));
-            
+
             return userData;
         } catch (error) {
             console.error('Login error:', error);
@@ -75,7 +66,6 @@ export const AuthProvider = ({ children }) => {
 
     const addPurchase = async (product) => {
         if (!user) return false;
-        
         try {
             await purchaseApi.addPurchase(user.mcUsername, product);
             return true;
@@ -86,11 +76,11 @@ export const AuthProvider = ({ children }) => {
     };
 
     return (
-        <AuthContext.Provider value={{ 
-            user, 
-            isAuthenticated, 
-            login, 
-            logout, 
+        <AuthContext.Provider value={{
+            user,
+            isAuthenticated,
+            login,
+            logout,
             getUserPurchases,
             addPurchase,
             loading
