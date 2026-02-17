@@ -158,7 +158,7 @@ function App() {
         </div>
       </div>
 
-      {/* Discord Box  */}
+      {/* Discord  */}
       <div className="w-full relative group mb-32">
         <div className="wavy-container border border-ice-glow/20 overflow-hidden transition-all duration-500 rounded-[2.5rem] shadow-[0_0_60px_rgba(0,184,255,0.1)] bg-ice-dark/40 backdrop-blur-md">
           <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-12 px-8 md:px-20 py-16">

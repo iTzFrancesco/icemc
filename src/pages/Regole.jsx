@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Regole = ({ serverName }) => {
+const Regole = () => {
     const [activeTab, setActiveTab] = useState('discord');
 
     const discordSections = [
