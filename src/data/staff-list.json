@@ -24,7 +24,13 @@
     }
   ],
   "Sr. Admin": [],
-  "Admin": [],
+  "Admin": [
+    {
+      "displayName": "Phasmo",
+      "mcName": "GlowingLemur74",
+      "description": ""
+    }
+  ],
   "Sr. Developer": [],
   "Developer": [],
   "Jr. Developer": [
