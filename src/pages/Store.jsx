@@ -3,7 +3,6 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useAuth } from '../contexts/useAuth.js';
 import { tebexClient } from '../lib/tebexClient.js';
 
-
 // Importa le immagini
 import rankVip from '../assets/rank-vip.png';
 import rankVipPlus from '../assets/rank-vip-plus.png';
@@ -14,6 +13,8 @@ import key1 from '../assets/key-1.png';
 import key5 from '../assets/key-5.png';
 import key10 from '../assets/key-10.png';
 import key25 from '../assets/key-25.png';
+
+const discordInvite = "https://discord.gg/cU6x8t49B3"
 
 const modes = [
     { id: 'skygen', name: 'SkyGen' },
@@ -396,8 +397,9 @@ const Store = () => {
 
             {/* Footer */}
             <div className="text-center mt-16">
-                <p className="text-ice-light/60 font-black tracking-[0.2em]">
-                    Per qualsiasi problema contatta lo staff su Discord
+                <p className="text-ice-light/80 font-black tracking-[0.2em]">
+                    Per qualsiasi problema contatta lo staff su  <a className='text-ice-glow' href={discordInvite} target='__blank'>Discord</a>
+                       
                 </p>
             </div>
         </div>
