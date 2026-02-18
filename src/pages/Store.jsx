@@ -14,7 +14,6 @@ import key5 from '../assets/key-5.png';
 import key10 from '../assets/key-10.png';
 import key25 from '../assets/key-25.png';
 
-const discordInvite = "https://discord.gg/cU6x8t49B3"
 
 const modes = [
     { id: 'skygen', name: 'SkyGen' },
@@ -60,7 +59,7 @@ const primeProducts = [
 ];
 
 const Store = () => {
-    const navigate = useNavigate();
+    const discordInvite = "https://discord.gg/cU6x8t49B3"  
     const [searchParams] = useSearchParams();
     const [selectedMode, setSelectedMode] = useState('skygen');
     const [selectedCategory, setSelectedCategory] = useState('ranks');
@@ -399,7 +398,6 @@ const Store = () => {
             <div className="text-center mt-16">
                 <p className="text-ice-light/80 font-black tracking-[0.2em]">
                     Per qualsiasi problema contatta lo staff su  <a className='text-ice-glow' href={discordInvite} target='__blank'>Discord</a>
-                       
                 </p>
             </div>
         </div>
