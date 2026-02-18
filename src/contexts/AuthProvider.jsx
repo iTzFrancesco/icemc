@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { AuthContext } from './AuthContext.js';
-import { userApi, purchaseApi } from '../lib/api.js';
 
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
@@ -27,25 +26,16 @@ export const AuthProvider = ({ children }) => {
     }, []);
 
     const login = async (mcUsername) => {
-        try {
-            const dbUser = await userApi.getOrCreateUser(mcUsername);
+        const userData = {
+            mcUsername: mcUsername.trim(),
+            loginDate: new Date().toISOString()
+        };
 
-            const userData = {
-                mcUsername: dbUser.mc_username,
-                id: dbUser.id,
-                createdAt: dbUser.created_at,
-                loginDate: new Date().toISOString()
-            };
+        setUser(userData);
+        setIsAuthenticated(true);
+        localStorage.setItem('icemc_user', JSON.stringify(userData));
 
-            setUser(userData);
-            setIsAuthenticated(true);
-            localStorage.setItem('icemc_user', JSON.stringify(userData));
-
-            return userData;
-        } catch (error) {
-            console.error('Login error:', error);
-            throw error;
-        }
+        return userData;
     };
 
     const logout = () => {
@@ -54,35 +44,12 @@ export const AuthProvider = ({ children }) => {
         localStorage.removeItem('icemc_user');
     };
 
-    const getUserPurchases = async () => {
-        if (!user) return [];
-        try {
-            return await purchaseApi.getUserPurchases(user.mcUsername);
-        } catch (error) {
-            console.error('Error getting purchases:', error);
-            return [];
-        }
-    };
-
-    const addPurchase = async (product) => {
-        if (!user) return false;
-        try {
-            await purchaseApi.addPurchase(user.mcUsername, product);
-            return true;
-        } catch (error) {
-            console.error('Error adding purchase:', error);
-            return false;
-        }
-    };
-
     return (
         <AuthContext.Provider value={{
             user,
             isAuthenticated,
             login,
             logout,
-            getUserPurchases,
-            addPurchase,
             loading
         }}>
             {children}

@@ -36,7 +36,7 @@ const TEBEX_PACKAGE_IDS = {
     'Join': 7288511,
     'Migrazione Account': 7288513,
     'Credito Utente': 7288516,
-    'test': 7288521,
+    //'test': 7288521,
 };
 
 const skygenProducts = {
@@ -55,7 +55,7 @@ const primeProducts = [
     { name: 'Join', price: '€9.99', description: '', icon: null, emoji: '🔓' },
     { name: 'Migrazione Account', price: '€4.99', description: '', icon: null, emoji: '🔁' },
     { name: 'Credito Utente', price: '€9.99', description: '', icon: null, emoji: '💳' },
-    { name: 'test', price: '€0', description: '', icon: null, emoji: '💳' },
+    //{ name: 'test', price: '€0', description: '', icon: null, emoji: '💳' },
 ];
 
 const Store = () => {
@@ -264,7 +264,7 @@ const Store = () => {
 
                         <div className="bg-white/5 p-4 rounded-lg mb-6 border border-white/10 text-center">
                             <p className="text-sm text-ice-light/60 mb-1">Account Minecraft:</p>
-                            <p className="text-lg font-bold text-white">👾 {user?.mcUsername}</p>
+                            <p className="text-lg font-bold text-white">{user?.mcUsername}</p>
                         </div>
 
                         <p className="text-center text-ice-light/60 text-sm mb-6">
@@ -368,7 +368,7 @@ const Store = () => {
                             Il tuo acquisto verrà consegnato automaticamente sul server entro pochi minuti.
                         </p>
                         <button
-                            onClick={() => { setShowSuccessModal(false); navigate('/profilo'); }}
+                            onClick={() => { setShowSuccessModal(false); }}
                             className="w-full py-4 px-8 rounded-xl font-black text-xl bg-gradient-to-r from-ice-glow to-blue-500 text-black hover:scale-105 hover:shadow-[0_0_30px_rgba(0,242,255,0.4)] transition-all uppercase tracking-widest"
                         >
                             Fantastico!

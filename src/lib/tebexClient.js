@@ -1,7 +1,13 @@
 // Tebex Headless API Client
 // Docs: https://docs.tebex.io/developers/headless-api/overview
 
-const TEBEX_TOKEN = '11spb-d203c491ed3c7abe3767a67575d0532c1d3313e6';
+// Token from environment variable (VITE_ prefix required by Vite)
+const TEBEX_TOKEN = import.meta.env.VITE_TEBEX_TOKEN;
+
+if (!TEBEX_TOKEN) {
+    console.error('❌ VITE_TEBEX_TOKEN non configurato! Copia .env.example in .env e inserisci il token.');
+}
+
 const TEBEX_BASE_URL = 'https://headless.tebex.io/api';
 
 class TebexClient {

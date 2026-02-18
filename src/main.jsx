@@ -6,7 +6,6 @@ import App from './App.jsx'
 import Staff from './pages/Staff.jsx'
 import Store from './pages/Store.jsx'
 import Regole from './pages/Regole.jsx'
-import Profile from './pages/Profile.jsx'
 import Layout from './components/Layout.jsx'
 import ScrollToTop from './components/ScrollToTop.jsx'
 import { AuthProvider } from './contexts/AuthProvider.jsx'
@@ -21,7 +20,6 @@ createRoot(document.getElementById('root')).render(
             <Route path="staff" element={<Staff />} />
             <Route path="store" element={<Store />} />
             <Route path="regole" element={<Regole />} />
-            <Route path="profilo" element={<Profile />} />
           </Route>
         </Routes>
       </BrowserRouter>

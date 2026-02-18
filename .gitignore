@@ -4,8 +4,3 @@ __pycache__
 staff_editor_config.txt
 database
 .env
-ARCHITETTURA.md
-README-PROCESSOR.md
-
-processor.js
-processor.service

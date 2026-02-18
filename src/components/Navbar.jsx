@@ -66,17 +66,14 @@ const Navbar = ({ serverName }) => {
                     <div className="absolute right-0 top-1/2 -translate-y-1/2">
                         {isAuthenticated ? (
                             <div className="flex items-center gap-2">
-                                <Link 
-                                    to="/profilo" 
-                                    className="flex items-center gap-2 glass-card px-3 py-2 border-ice-glow/30 hover:border-ice-glow/60 transition-all duration-300"
-                                >
+                                <div className="flex items-center gap-2 glass-card px-3 py-2 border-ice-glow/30">
                                     <span className="text-ice-glow font-bold hidden sm:block">{user?.mcUsername}</span>
                                     <img 
                                         src={`https://mc-heads.net/avatar/${user?.mcUsername}/32`}
                                         alt={`${user?.mcUsername} Avatar`}
                                         className="w-8 h-8 rounded"
                                     />
-                                </Link>
+                                </div>
                                 <button
                                     onClick={logout}
                                     className="text-white/60 hover:text-red-400 transition-colors hidden sm:block"
@@ -112,16 +109,13 @@ const Navbar = ({ serverName }) => {
                     <div className="flex items-center gap-3">
                         {/* Mobile Auth Button */}
                         {isAuthenticated ? (
-                            <Link 
-                                to="/profilo" 
-                                className="flex items-center gap-2"
-                            >
+                            <div className="flex items-center gap-2">
                                 <img 
                                     src={`https://mc-heads.net/avatar/${user?.mcUsername}/32`}
                                     alt="Avatar"
                                     className="w-8 h-8 rounded"
                                 />
-                            </Link>
+                            </div>
                         ) : (
                             <button
                                 onClick={() => setShowLoginModal(true)}
@@ -173,18 +167,14 @@ const Navbar = ({ serverName }) => {
                         ))}
                         {isAuthenticated && (
                             <>
-                                <Link
-                                    to="/profilo"
-                                    onClick={() => setIsMenuOpen(false)}
-                                    className="flex items-center gap-2 text-ice-glow font-bold py-2"
-                                >
+                                <div className="flex items-center gap-2 text-ice-glow font-bold py-2">
                                     <img 
                                         src={`https://mc-heads.net/avatar/${user?.mcUsername}/24`}
                                         alt="Avatar"
                                         className="w-6 h-6 rounded"
                                     />
                                     {user?.mcUsername}
-                                </Link>
+                                </div>
                                 <button
                                     onClick={() => {
                                         logout();
